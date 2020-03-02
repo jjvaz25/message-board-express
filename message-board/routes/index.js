@@ -13,10 +13,17 @@ router.get('/', function(req, res, next) {
   res.render('index', { 
     title: 'Mini Messageboard',
     messages,
-    title2: 'jeff'
   });
 });
 
+router.post('/new', (req, res) => {
+  let newMessage = {}
+  newMessage.text = req.body.messageText;
+  newMessage.user = req.body.userName;
+  newMessage.posted = new Date();
+  messages.push(newMessage);
+  res.redirect('/');
+})
 
 
 

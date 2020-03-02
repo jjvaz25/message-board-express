@@ -1,7 +1,10 @@
 <h1>{{title}}</h1>
 <p>Welcome to your {{title}}</p>
-<ul>
+<div>
   {{#each messages}}
-  <li>Message: {{this.text}} User: {{this.user}} Posted: {{this.posted}}</li>
+    <h2>{{this.user}}</h2>
+    <p>Message: {{this.text}}</p>
+    <p>Posted: {{this.posted}}</p>
   {{/each}}
-</ul>
+</div>
+<a href="/new">Post new message</a>
